@@ -26,6 +26,13 @@ abstract class AbstractRequestResponse
     private $communicator;
 
     /**
+     * The response object.
+     *
+     * @var ResponseInterface
+     */
+    private $response;
+
+    /**
      * Save the communicator object.
      *
      * @param CommunicatorInterface $communicator
