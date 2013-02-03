@@ -19,5 +19,8 @@
         "psr-0": {
             "RequestResponse\\": "src/"
         }
+    },
+    "require-dev": {
+        "phpmd/phpmd" : "1.4.0"
     }
 }
