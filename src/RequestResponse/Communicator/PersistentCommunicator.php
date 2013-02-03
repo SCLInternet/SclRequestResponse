@@ -30,7 +30,7 @@ class PersistentCommunicator implements CommunicatorInterface
     private $socket;
 
     /**
-     * This string that is looked for to know that a reponse has completed.
+     * The regular expression that is looked for to know that a reponse has completed.
      *
      * @var string
      */
@@ -40,9 +40,7 @@ class PersistentCommunicator implements CommunicatorInterface
      * Constructor
      *
      * @param SocketInterface $socket
-     * @param string          $responseEnding
-     * 
-     * @todo Check that the socket is connected
+     * @param string          $responseEnding Regular expression to match the end of the response
      */
     public function __construct(SocketInterface $socket, $reponseEnding)
     {
@@ -56,6 +54,31 @@ class PersistentCommunicator implements CommunicatorInterface
     public function __destruct()
     {
         $this->socket->disconnect();
+    }
+
+    /**
+     * Set up a connection to the server.
+     * 
+     * @param string  $host
+     * @param integer $port
+     * @param boolean $secure
+     */
+    public function connect($host, $port, $secure = true)
+    {
+        $this->socket->setBlocking(false);
+
+        if (!$this->socket->connect($host, $port, $secure)) {
+            throw new \Exception(
+                sprintf(
+                    '%s failed to %s:%d with error %s (%d).',
+                    $secure ? 'Secure connection' : 'Connection',
+                    $host,
+                    $port,
+                    $this->socket->connectionError(),
+                    $this->socket->connectionErrorNo()
+                )
+            );
+        }
     }
 
     /**
@@ -88,7 +111,7 @@ class PersistentCommunicator implements CommunicatorInterface
             }
 
             $data .= $this->socket->read();
-        } while (!preg_match('!</epp>!', $data));
+        } while (!preg_match($this->responseEnding, $data));
 
         return utf8_decode(substr($data, 4));
     }

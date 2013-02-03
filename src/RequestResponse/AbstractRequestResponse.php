@@ -27,8 +27,10 @@ abstract class AbstractRequestResponse
      * Save the communicator object.
      *
      * @param CommunicatorInterface $communicator
+     *
+     * @return void
      */
-    public function __construct(CommunicatorInterface $communicator)
+    public function setCommunicator(CommunicatorInterface $communicator)
     {
         $this->communicator = $communicator;
     }
@@ -40,7 +42,7 @@ abstract class AbstractRequestResponse
      *
      * @return ResponseInterface
      */
-    protected function processRequest(RequestInterface $request)
+    public function processRequest(RequestInterface $request)
     {
         $this->response = $this->communicator->getResponse($request);
 
