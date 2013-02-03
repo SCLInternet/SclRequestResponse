@@ -1,5 +1,5 @@
 {
-    "name": "tomphp/requestreponse",
+    "name": "tomphp/requestresponse",
     "description": "Library for exchanging request and reponse packets with a service provider.",
     "type": "library",
     "license": "GPL-3.0",
