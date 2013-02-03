@@ -8,6 +8,9 @@
 
 namespace RequestResponse\Communicator;
 
+use RequestResponse\RequestInterface;
+use RequestResponse\ResponseInterface;
+
 /**
  * Sets up communication with the Nominet EPP server and sends requests and
  * processes the responses.
