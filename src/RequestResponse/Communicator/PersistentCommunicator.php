@@ -9,6 +9,7 @@
 namespace RequestResponse\Communicator;
 
 use BasicSocket\SocketInterface;
+use RequestResponse\Exception;
 use RequestResponse\RequestInterface;
 use RequestResponse\ResponseInterface;
 
@@ -62,13 +63,15 @@ class PersistentCommunicator implements CommunicatorInterface
      * @param string  $host
      * @param integer $port
      * @param boolean $secure
+     *
+     * @return void
      */
     public function connect($host, $port, $secure = true)
     {
         $this->socket->setBlocking(false);
 
         if (!$this->socket->connect($host, $port, $secure)) {
-            throw new \Exception(
+            throw new Exception\ConnectionFailedException(
                 sprintf(
                     '%s failed to %s:%d with error %s (%d).',
                     $secure ? 'Secure connection' : 'Connection',
@@ -107,7 +110,7 @@ class PersistentCommunicator implements CommunicatorInterface
         // TODO Invesigate if a time out is required
         do {
             if ($this->socket->closed()) {
-                throw new \Exception('The connection has been dropped.');
+                throw new Exception\ConnectionDroppedException('The connection has been dropped.');
             }
 
             $data .= $this->socket->read();
