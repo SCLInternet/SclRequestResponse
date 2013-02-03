@@ -1,0 +1,23 @@
+{
+    "name": "tomphp/requestreponse",
+    "description": "Library for exchanging request and reponse packets with a service provider.",
+    "type": "library",
+    "license": "GPL-3.0",
+    "homepage": "https://github.com/tomphp/RequestResponse",
+    "authors": [
+        {
+            "name": "Tom Oram",
+            "email": "tom@x2k.co.uk",
+            "homepage": "http://github.com/tomphp"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "tomphp/basicsocket": "dev-master"
+    },
+    "autoload": {
+        "psr-0": {
+            "RequestResponse\\": "src/"
+        }
+    }
+}
