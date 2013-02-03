@@ -42,7 +42,7 @@ class PersistentCommunicator implements CommunicatorInterface
      * @param SocketInterface $socket
      * @param string          $responseEnding Regular expression to match the end of the response
      */
-    public function __construct(SocketInterface $socket, $reponseEnding)
+    public function __construct(SocketInterface $socket, $responseEnding)
     {
         $this->socket = $socket;
         $this->responseEnding = (string) $responseEnding;
