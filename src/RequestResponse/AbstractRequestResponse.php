@@ -8,6 +8,8 @@
 
 namespace RequestResponse;
 
+use RequestResponse\Communicator\CommunicatorInterface;
+
 /**
  * A basic abstract class that can be extended to create the interface to the
  * request/response API.
