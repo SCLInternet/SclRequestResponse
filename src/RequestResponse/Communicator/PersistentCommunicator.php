@@ -70,6 +70,7 @@ class PersistentCommunicator implements CommunicatorInterface
     {
         $this->socket->setBlocking(false);
 
+/*
         if (!$this->socket->connect($host, $port, $secure)) {
             throw new Exception\ConnectionFailedException(
                 sprintf(
@@ -81,7 +82,7 @@ class PersistentCommunicator implements CommunicatorInterface
                     $this->socket->connectionErrorNo()
                 )
             );
-        }
+        }*/
     }
 
     /**
