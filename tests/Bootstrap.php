@@ -1,9 +1,9 @@
 <?php
 /**
- * WhoisLookup library (https://github.com/SCLInternet/SclWhois)
+ * SclRequestResponse library (https://github.com/SCLInternet/SclWhois)
  *
- * @link https://github.com/tomphp/BasicSocket for the canonical source repository
- * @license http://opensource.org/licenses/gpl-3.0.html GNU General Public License, version 3 (GPL-3.0)
+ * @link https://github.com/SCLInternet/SclRequestResponse for the canonical source repository
+ * @license http://opensource.org/licenses/MIT The MIT License (MIT)
  */
 
 if (!($loader = @include_once __DIR__ . '/../vendor/autoload.php')) {
