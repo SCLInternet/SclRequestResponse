@@ -128,7 +128,7 @@ class PersistentCommunicator implements CommunicatorInterface
      */
     public function getResponse(RequestInterface $request)
     {
-        $this->write($request);
+        $this->write($request->getPacket());
 
         return $request->getResponse()->init($this->read());
     }

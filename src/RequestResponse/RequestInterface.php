@@ -16,11 +16,11 @@ namespace RequestResponse;
 interface RequestInterface
 {
     /**
-     * Returns the XML of the request.
+     * Returns formatted data to be sent
      *
      * @return string
      */
-    public function __toString();
+    public function getPacket();
 
     /**
      * Return the response.
