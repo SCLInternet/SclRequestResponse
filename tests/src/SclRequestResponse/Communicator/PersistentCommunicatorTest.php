@@ -1,12 +1,12 @@
 <?php
 /**
- * RequestResponse library (https://github.com/tomphp/WhiosLookup)
+ * SclRequestResponse library (https://github.com/SCLInternet/SclWhois)
  *
- * @link https://github.com/tomphp/RequestResponse for the canonical source repository
+ * @link https://github.com/SCLInternet/SclRequestResponse for the canonical source repository
  * @license http://opensource.org/licenses/MIT The MIT License (MIT)
  */
 
-namespace RequestResponse\Communicator;
+namespace SclRequestResponse\Communicator;
 
 /**
  * Test for {@see PersistentCommunicator}
@@ -23,19 +23,19 @@ class PersistentCommunicatorTest extends \PHPUnit_Framework_TestCase
     private $communicator;
 
     /**
-     * @var \BasicSocket\SocketInterface
+     * @var \SclSocket\SocketInterface
      */
     private $socket;
 
     protected function setUp()
     {
-        $this->socket = $this->getMock('BasicSocket\SocketInterface');
+        $this->socket = $this->getMock('SclSocket\SocketInterface');
 
         $this->communicator = new PersistentCommunicator($this->socket, self::RESPONSE_ENDING);
     }
 
     /**
-     * @covers \RequestResponse\Communicator\PersistentCommunicator::connect
+     * @covers \SclRequestResponse\Communicator\PersistentCommunicator::connect
      */
     public function testConnect()
     {
@@ -56,7 +56,7 @@ class PersistentCommunicatorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \RequestResponse\Exception\ConnectionFailedException
+     * @expectedException \SclRequestResponse\Exception\ConnectionFailedException
      */
     public function testFailedConnect()
     {
@@ -73,7 +73,7 @@ class PersistentCommunicatorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers \RequestResponse\Communicator\PersistentCommunicator::connect
+     * @covers \SclRequestResponse\Communicator\PersistentCommunicator::connect
      */
     public function testGetResponse()
     {

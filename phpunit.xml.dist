@@ -11,7 +11,7 @@
         backupGlobals="false"
         syntaxCheck="true"
         >
-    <testsuite name="RequestResponse tests">
+    <testsuite name="SclRequestResponse tests">
         <directory>./tests/src</directory>
     </testsuite>
     <filter>

@@ -1,17 +1,17 @@
 <?php
 /**
- * RequestResponse library (https://github.com/tomphp/WhiosLookup)
+ * SclRequestResponse library (https://github.com/SCLInternet/SclWhois)
  *
- * @link https://github.com/tomphp/RequestResponse for the canonical source repository
+ * @link https://github.com/SCLInternet/SclRequestResponse for the canonical source repository
  * @license http://opensource.org/licenses/MIT The MIT License (MIT)
  */
 
-namespace RequestResponse\Communicator;
+namespace SclRequestResponse\Communicator;
 
-use BasicSocket\SocketInterface;
-use RequestResponse\Exception;
-use RequestResponse\RequestInterface;
-use RequestResponse\ResponseInterface;
+use SclSocket\SocketInterface;
+use SclRequestResponse\Exception;
+use SclRequestResponse\RequestInterface;
+use SclRequestResponse\ResponseInterface;
 
 /**
  * A generic communicator class that can be used to exchange multiple requests

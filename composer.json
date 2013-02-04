@@ -1,9 +1,9 @@
 {
-    "name": "tomphp/requestresponse",
+    "name": "sclinternet/scl-request-response",
     "description": "Library for exchanging request and reponse packets with a service provider.",
     "type": "library",
     "license": "MIT",
-    "homepage": "https://github.com/tomphp/RequestResponse",
+    "homepage": "https://github.com/SCLInternet/SclRequestResponse",
     "authors": [
         {
             "name": "Tom Oram",
@@ -13,11 +13,11 @@
     ],
     "require": {
         "php": ">=5.3.0",
-        "tomphp/basicsocket": "dev-master"
+        "sclinternet/scl-socket": "dev-master"
     },
     "autoload": {
         "psr-0": {
-            "RequestResponse\\": "src/"
+            "SclRequestResponse\\": "src/"
         }
     },
     "require-dev": {
