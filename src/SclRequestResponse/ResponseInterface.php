@@ -16,13 +16,6 @@ namespace SclRequestResponse;
 interface ResponseInterface
 {
     /**
-     * If $data is provided then it is passed to an init() call.
-     *
-     * @param array|null $data
-     */
-    public function __construct($data = null);
-
-    /**
      * Read the data from an array into this object.
      *
      * @param string $data
