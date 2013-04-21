@@ -6,7 +6,9 @@
  * @license http://opensource.org/licenses/MIT The MIT License (MIT)
  */
 
-namespace SclRequestResponse\Communicator;
+namespace SclRequestResponseTests\Communicator;
+
+use SclRequestResponse\Communicator\PersistentCommunicator;
 
 /**
  * Test for {@see PersistentCommunicator}
