@@ -11,7 +11,7 @@
         syntaxCheck="true"
         >
     <testsuite name="SclRequestResponse tests">
-        <directory>./SclRequestResponseTests</directory>
+        <directory>./tests/SclRequestResponseTests</directory>
     </testsuite>
     <filter>
         <whitelist addUncoveredFilesFromWhitelist="true">
