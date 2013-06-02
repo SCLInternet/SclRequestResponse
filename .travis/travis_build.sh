@@ -5,7 +5,7 @@ vendor/bin/phpunit
 PHPUNIT=$?
 
 ### Check coding standards
-vendor/bin/phpcs --standard=psr2 src
+vendor/bin/phpcs --standard=psr2 src tests
 PHPCS=$?
 
 ### Check code quality
